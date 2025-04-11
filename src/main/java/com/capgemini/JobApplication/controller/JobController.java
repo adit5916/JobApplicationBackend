@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import com.capgemini.JobApplication.service.JobService;
 
 @RestController
 @RequestMapping("/api/jobs")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class JobController {
 	private JobService jobService;
 
@@ -30,13 +32,28 @@ public class JobController {
 	}
 	
 	@GetMapping
-    public ResponseEntity<List<JobResponseDto>> getAllUsers() {
+    public ResponseEntity<List<JobResponseDto>> getAllJobs() {
         return ResponseEntity.ok(jobService.getAllJobs());
     }
     
     @GetMapping("/{id}")
     public ResponseEntity<JobResponseDto> getJobById(@PathVariable Long id) {
         return ResponseEntity.ok(jobService.getJobById(id));
+    }
+    
+    @GetMapping("/employer/{id}")
+    public ResponseEntity<List<JobResponseDto>> getJobByEmployerId(@PathVariable Long id) {
+        return ResponseEntity.ok(jobService.getJobByEmployerId(id));
+    }
+    
+    @GetMapping("/title/{title}")
+    public ResponseEntity<List<JobResponseDto>> getJobByTitle(@PathVariable String title) {
+        return ResponseEntity.ok(jobService.getJobByTitle(title));
+    }
+    
+    @GetMapping("/employer/email/{email}")
+    public ResponseEntity<List<JobResponseDto>> getJobByEmployerEmail(@PathVariable String email) {
+        return ResponseEntity.ok(jobService.getJobByEmployerEmail(email));
     }
     
     @PostMapping

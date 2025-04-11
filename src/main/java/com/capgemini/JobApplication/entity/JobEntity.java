@@ -50,34 +50,31 @@ public class JobEntity {
 	    @Column(name = "location", nullable = false, length = 225)
 	    private String location;
 	    
-	    @Column(name = "salaryMin", precision = 10, scale = 2)
+	    @Column(name = "salary_min", precision = 10, scale = 2)
 	    private BigDecimal salaryMin;
 	    
-	    @Column(name = "salaryMax", precision = 10, scale = 2)
+	    @Column(name = "salary_max", precision = 10, scale = 2)
 	    private BigDecimal salaryMax;
 	    
 	    @Column(name = "skills", columnDefinition = "json")
 	    @JdbcTypeCode(SqlTypes.JSON)
 	    private List<String> skills;
 	    
-	    @Column(name = "experienceRequired", length = 255)
+	    @Column(name = "experience_required", length = 255)
 	    private String experienceRequired;
 	    
-	    @Column(name = "educationRequired", length = 255)
+	    @Column(name = "education_required", length = 255)
 	    private String educationRequired;
 	    
-	    @Column(name = "postedDate", nullable = false)
+	    @Column(name = "posted_date", nullable = false)
 	    private LocalDateTime postedDate;
 	    
-	    @Column(name = "closingDate")
+	    @Column(name = "closing_date")
 	    private LocalDate closingDate;
 	    
 	    @Enumerated(EnumType.STRING)
 	    @Column(name = "job_status", nullable = false)
 	    private JobStatus jobStatus = JobStatus.open;
-	    
-	    @Column(name = "views")
-	    private Integer views = 0;
 
 		public JobEntity() {
 			super();
@@ -87,7 +84,7 @@ public class JobEntity {
 		public JobEntity(Long id, UserEntity employer, String title, String description,
 				String requirements, JobType jobType, String location, BigDecimal salaryMin, BigDecimal salaryMax,
 				List<String> skills, String experienceRequired, String educationRequired, LocalDateTime postedDate,
-				LocalDate closingDate, JobStatus jobStatus, Integer views) {
+				LocalDate closingDate, JobStatus jobStatus) {
 			super();
 			this.id = id;
 			this.employer = employer;
@@ -104,7 +101,6 @@ public class JobEntity {
 			this.postedDate = postedDate;
 			this.closingDate = closingDate;
 			this.jobStatus = jobStatus;
-			this.views = views;
 		}
 
 		public Long getId() {
@@ -225,14 +221,6 @@ public class JobEntity {
 
 		public void setJobStatus(JobStatus jobStatus) {
 			this.jobStatus = jobStatus;
-		}
-
-		public Integer getViews() {
-			return views;
-		}
-
-		public void setViews(Integer views) {
-			this.views = views;
 		}
 	    
 	    

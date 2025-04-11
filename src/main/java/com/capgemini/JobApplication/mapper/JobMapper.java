@@ -38,17 +38,16 @@ public class JobMapper {
 	        dto.setTitle(entity.getTitle());
 	        dto.setDescription(entity.getDescription());
 	        dto.setRequirements(entity.getRequirements());
-	        dto.setJobType(entity.getJobType());
+	        dto.setJob_type(entity.getJobType());
 	        dto.setLocation(entity.getLocation());
-	        dto.setSalaryMin(entity.getSalaryMin());
-	        dto.setSalaryMax(entity.getSalaryMax());
+	        dto.setSalary_min(entity.getSalaryMin());
+	        dto.setSalary_max(entity.getSalaryMax());
 	        dto.setSkills(entity.getSkills());
-	        dto.setExperienceRequired(entity.getExperienceRequired());
-	        dto.setEducationRequired(entity.getEducationRequired());
-	        dto.setPostedDate(entity.getPostedDate());
-	        dto.setClosingDate(entity.getClosingDate());
-	        dto.setJobStatus(entity.getJobStatus());
-	        dto.setViews(entity.getViews());
+	        dto.setExperience_required(entity.getExperienceRequired());
+	        dto.setEducation_required(entity.getEducationRequired());
+	        dto.setPosted_date(entity.getPostedDate());
+	        dto.setClosing_date(entity.getClosingDate());
+	        dto.setJob_status(entity.getJobStatus());
 	        
 	        return dto;
 	    }
@@ -62,18 +61,17 @@ public class JobMapper {
 	        entity.setTitle(dto.getTitle());
 	        entity.setDescription(dto.getDescription());
 	        entity.setRequirements(dto.getRequirements());
-	        entity.setJobType(dto.getJobType());
+	        entity.setJobType(dto.getJob_type());
 	        entity.setLocation(dto.getLocation());
-	        entity.setSalaryMin(dto.getSalaryMin());
-	        entity.setSalaryMax(dto.getSalaryMax());
+	        entity.setSalaryMin(dto.getSalary_min());
+	        entity.setSalaryMax(dto.getSalary_max());
 	        entity.setSkills(dto.getSkills());
-	        entity.setExperienceRequired(dto.getExperienceRequired());
-	        entity.setEducationRequired(dto.getEducationRequired());
-	        entity.setClosingDate(dto.getClosingDate());
+	        entity.setExperienceRequired(dto.getExperience_required());
+	        entity.setEducationRequired(dto.getEducation_required());
+	        entity.setClosingDate(dto.getClosing_date());
 	        
 	        entity.setPostedDate(LocalDateTime.now());
 	        entity.setJobStatus(JobStatus.open);
-	        entity.setViews(0);
 	        
 	        return entity;
 	    }
@@ -91,37 +89,37 @@ public class JobMapper {
 		    if (dto.getRequirements() != null) {
 		        entity.setRequirements(dto.getRequirements());
 		    }
-		    if (dto.getJobType() != null) {
-		        entity.setJobType(dto.getJobType());
+		    if (dto.getJob_type() != null) {
+		        entity.setJobType(dto.getJob_type());
 		    }
 		    if (dto.getLocation() != null) {
 		        entity.setLocation(dto.getLocation());
 		    }
-		    if (dto.getSalaryMin() != null) {
-		        entity.setSalaryMin(dto.getSalaryMin());
+		    if (dto.getSalary_min() != null) {
+		        entity.setSalaryMin(dto.getSalary_min());
 		    }
-		    if (dto.getSalaryMax() != null) {
-		        entity.setSalaryMax(dto.getSalaryMax());
+		    if (dto.getSalary_max() != null) {
+		        entity.setSalaryMax(dto.getSalary_max());
 		    }
 
 		    if (dto.getSkills() != null) {
 		        entity.setSkills(dto.getSkills());
 		    }
 
-		    if (dto.getExperienceRequired() != null) {
-		        entity.setExperienceRequired(dto.getExperienceRequired());
+		    if (dto.getExperience_required() != null) {
+		        entity.setExperienceRequired(dto.getExperience_required());
 		    }
 
-		    if (dto.getEducationRequired() != null) {
-		        entity.setEducationRequired(dto.getEducationRequired());
+		    if (dto.getEducation_required() != null) {
+		        entity.setEducationRequired(dto.getEducation_required());
 		    }
 
-		    if (dto.getClosingDate() != null) {
-		        entity.setClosingDate(dto.getClosingDate());
+		    if (dto.getClosing_date() != null) {
+		        entity.setClosingDate(dto.getClosing_date());
 		    }
 
-		    if (dto.getJobStatus() != null) {
-		        entity.setJobStatus(dto.getJobStatus());
+		    if (dto.getJob_status() != null) {
+		        entity.setJobStatus(dto.getJob_status());
 		    }
 		    return entity;
 		}

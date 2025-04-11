@@ -5,10 +5,10 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.capgemini.JobApplication.dto.UserCreateDto;
 import com.capgemini.JobApplication.dto.UserResponseDto;
 import com.capgemini.JobApplication.dto.UserUpdateDto;
 import com.capgemini.JobApplication.entity.UserEntity;
+import com.capgemini.JobApplication.entity.enums.UserRole;
 import com.capgemini.JobApplication.exception.ResourceNotFoundException;
 import com.capgemini.JobApplication.mapper.UserMapper;
 import com.capgemini.JobApplication.repository.UserRepository;
@@ -47,18 +47,6 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserResponseDto addUser(UserCreateDto userDto) {
-		Optional<UserEntity> existingUser = userRepository.findByEmail(userDto.getEmail());
-        if (existingUser.isPresent()) {
-            throw new IllegalArgumentException("Email already exists");
-        }
-        
-        UserEntity user = userMapper.toEntity(userDto);
-        UserEntity savedUser = userRepository.save(user);
-        return userMapper.toUserResponseDTO(savedUser);
-	}
-
-	@Override
 	public UserResponseDto updateUser(Long id, UserUpdateDto userDto) {
 		 UserEntity existingUser = userRepository.findById(id)
 		            .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
@@ -83,6 +71,12 @@ public class UserServiceImpl implements UserService{
 	        }
 	        userRepository.deleteById(id);
 	    }
-	
-	
+
+	@Override
+	public List<UserResponseDto> getUserByRole(UserRole user_role) {
+		List<UserEntity> users = userRepository.findByRole(user_role);
+		return userMapper.toUserResponseDTOList(users);
 }
+	}
+	
+	

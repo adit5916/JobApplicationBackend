@@ -42,8 +42,9 @@ public class WebSecurityConfiguration {
                 .cors(Customizer.withDefaults()) // Enable CORS
                 .authorizeHttpRequests(request ->
                         request.requestMatchers("/api/auth/**").permitAll()
-                                .requestMatchers("/api/jobseeker/**").hasAnyAuthority(UserRole.jobseeker.name())
-                                .requestMatchers("/api/employer/**").hasAnyAuthority(UserRole.employer.name())
+//                                .requestMatchers("/api/jobs/**").hasAnyAuthority(UserRole.jobseeker.name())
+//                                .requestMatchers("/api/employer/**").hasAnyAuthority(UserRole.employer.name())
+//                        		  .requestMatchers("api/applications/add").hasAnyAuthority(UserRole.jobseeker.name())
                                 .anyRequest().authenticated())
                 .sessionManagement(manager ->
                         manager.sessionCreationPolicy(STATELESS))

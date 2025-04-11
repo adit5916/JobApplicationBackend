@@ -46,7 +46,7 @@ public class UserEntity implements UserDetails{
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "role", nullable = false, columnDefinition = "ENUM('jobseeker', 'employer') DEFAULT 'jobseeker'")
+	@Column(name = "role", nullable = false, columnDefinition = "ENUM('jobseeker', 'employer','admin) DEFAULT 'jobseeker'")
 	private UserRole user_role = UserRole.jobseeker;
 	
 	@Enumerated(EnumType.STRING)
@@ -55,9 +55,6 @@ public class UserEntity implements UserDetails{
 	
 	@Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
-    
-    @Column(name = "last_login", nullable = false)
-    private LocalDate lastLogin;
 
 	public UserEntity() {
 		super();
@@ -65,7 +62,7 @@ public class UserEntity implements UserDetails{
 	}
 
 	public UserEntity(Long id, String first_name, String last_name, String email, String number, String password,
-			UserRole user_role, UserStatus user_status, LocalDate dateCreated, LocalDate lastLogin) {
+			UserRole user_role, UserStatus user_status, LocalDate dateCreated) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
@@ -76,7 +73,6 @@ public class UserEntity implements UserDetails{
 		this.user_role = user_role;
 		this.user_status = user_status;
 		this.dateCreated = dateCreated;
-		this.lastLogin = lastLogin;
 	}
 
 	public Long getId() {
@@ -151,13 +147,6 @@ public class UserEntity implements UserDetails{
 		this.dateCreated = dateCreated;
 	}
 
-	public LocalDate getLastLogin() {
-		return lastLogin;
-	}
-
-	public void setLastLogin(LocalDate lastLogin) {
-		this.lastLogin = lastLogin;
-	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

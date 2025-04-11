@@ -2,9 +2,9 @@ package com.capgemini.JobApplication.service;
 
 import java.util.List;
 
-import com.capgemini.JobApplication.dto.UserCreateDto;
 import com.capgemini.JobApplication.dto.UserResponseDto;
 import com.capgemini.JobApplication.dto.UserUpdateDto;
+import com.capgemini.JobApplication.entity.enums.UserRole;
 
 public interface UserService {
 	List<UserResponseDto> getAllUsers();
@@ -13,9 +13,9 @@ public interface UserService {
 	
 	UserResponseDto getUserByEmail (String email);
 	
-	UserResponseDto addUser(UserCreateDto user);
-	
 	UserResponseDto updateUser(Long id, UserUpdateDto userDto);
+	
+	List<UserResponseDto> getUserByRole(UserRole user_role);
 	
 	void deleteUser(Long id);
 }

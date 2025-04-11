@@ -14,42 +14,40 @@ public class JobResponseDto {
     private String title;
     private String description;
     private String requirements;
-    private JobType jobType;
+    private JobType job_type;
     private String location;
-    private BigDecimal salaryMin;
-    private BigDecimal salaryMax;
+    private BigDecimal salary_min;
+    private BigDecimal salary_max;
     private List<String> skills;
-    private String experienceRequired;
-    private String educationRequired;
-    private LocalDateTime postedDate;
-    private LocalDate closingDate;
-    private JobStatus jobStatus;
-    private Integer views;
+    private String experience_required;
+    private String education_required;
+    private LocalDateTime posted_date;
+    private LocalDate closing_date;
+    private JobStatus job_status;
 	public JobResponseDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public JobResponseDto(Long id, UserResponseDto employer, String title, String description, String requirements,
-			JobType jobType, String location, BigDecimal salaryMin, BigDecimal salaryMax, List<String> skills,
-			String experienceRequired, String educationRequired, LocalDateTime postedDate, LocalDate closingDate,
-			JobStatus jobStatus, Integer views) {
+			JobType job_type, String location, BigDecimal salary_min, BigDecimal salary_max, List<String> skills,
+			String experience_required, String education_required, LocalDateTime posted_date, LocalDate closing_date,
+			JobStatus job_status) {
 		super();
 		this.id = id;
 		this.employer = employer;
 		this.title = title;
 		this.description = description;
 		this.requirements = requirements;
-		this.jobType = jobType;
+		this.job_type = job_type;
 		this.location = location;
-		this.salaryMin = salaryMin;
-		this.salaryMax = salaryMax;
+		this.salary_min = salary_min;
+		this.salary_max = salary_max;
 		this.skills = skills;
-		this.experienceRequired = experienceRequired;
-		this.educationRequired = educationRequired;
-		this.postedDate = postedDate;
-		this.closingDate = closingDate;
-		this.jobStatus = jobStatus;
-		this.views = views;
+		this.experience_required = experience_required;
+		this.education_required = education_required;
+		this.posted_date = posted_date;
+		this.closing_date = closing_date;
+		this.job_status = job_status;
 	}
 	public Long getId() {
 		return id;
@@ -81,11 +79,11 @@ public class JobResponseDto {
 	public void setRequirements(String requirements) {
 		this.requirements = requirements;
 	}
-	public JobType getJobType() {
-		return jobType;
+	public JobType getJob_type() {
+		return job_type;
 	}
-	public void setJobType(JobType jobType) {
-		this.jobType = jobType;
+	public void setJob_type(JobType job_type) {
+		this.job_type = job_type;
 	}
 	public String getLocation() {
 		return location;
@@ -93,17 +91,17 @@ public class JobResponseDto {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public BigDecimal getSalaryMin() {
-		return salaryMin;
+	public BigDecimal getSalary_min() {
+		return salary_min;
 	}
-	public void setSalaryMin(BigDecimal salaryMin) {
-		this.salaryMin = salaryMin;
+	public void setSalary_min(BigDecimal salary_min) {
+		this.salary_min = salary_min;
 	}
-	public BigDecimal getSalaryMax() {
-		return salaryMax;
+	public BigDecimal getSalary_max() {
+		return salary_max;
 	}
-	public void setSalaryMax(BigDecimal salaryMax) {
-		this.salaryMax = salaryMax;
+	public void setSalary_max(BigDecimal salary_max) {
+		this.salary_max = salary_max;
 	}
 	public List<String> getSkills() {
 		return skills;
@@ -111,42 +109,35 @@ public class JobResponseDto {
 	public void setSkills(List<String> skills) {
 		this.skills = skills;
 	}
-	public String getExperienceRequired() {
-		return experienceRequired;
+	public String getExperience_required() {
+		return experience_required;
 	}
-	public void setExperienceRequired(String experienceRequired) {
-		this.experienceRequired = experienceRequired;
+	public void setExperience_required(String experience_required) {
+		this.experience_required = experience_required;
 	}
-	public String getEducationRequired() {
-		return educationRequired;
+	public String getEducation_required() {
+		return education_required;
 	}
-	public void setEducationRequired(String educationRequired) {
-		this.educationRequired = educationRequired;
+	public void setEducation_required(String education_required) {
+		this.education_required = education_required;
 	}
-	public LocalDateTime getPostedDate() {
-		return postedDate;
+	public LocalDateTime getPosted_date() {
+		return posted_date;
 	}
-	public void setPostedDate(LocalDateTime postedDate) {
-		this.postedDate = postedDate;
+	public void setPosted_date(LocalDateTime posted_date) {
+		this.posted_date = posted_date;
 	}
-	public LocalDate getClosingDate() {
-		return closingDate;
+	public LocalDate getClosing_date() {
+		return closing_date;
 	}
-	public void setClosingDate(LocalDate closingDate) {
-		this.closingDate = closingDate;
+	public void setClosing_date(LocalDate closing_date) {
+		this.closing_date = closing_date;
 	}
-	public JobStatus getJobStatus() {
-		return jobStatus;
+	public JobStatus getJob_status() {
+		return job_status;
 	}
-	public void setJobStatus(JobStatus jobStatus) {
-		this.jobStatus = jobStatus;
+	public void setJob_status(JobStatus job_status) {
+		this.job_status = job_status;
 	}
-	public Integer getViews() {
-		return views;
-	}
-	public void setViews(Integer views) {
-		this.views = views;
-	}
-	
-    
+	    
 }

@@ -12,9 +12,15 @@ List<JobResponseDto> getAllJobs();
 	
 	JobResponseDto getJobById (Long id);
 	
+	List<JobResponseDto> getJobByEmployerId(Long id);
+	
 	JobResponseDto addJob(JobCreateDto job);
 	
 	JobResponseDto updateJob(Long id, JobUpdateDto jobDto);
+	
+	List<JobResponseDto> getJobByTitle(String title);
+	
+	List<JobResponseDto> getJobByEmployerEmail(String email);
 	
 	void deleteJob(Long id);
 }

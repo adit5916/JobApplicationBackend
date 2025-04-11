@@ -7,28 +7,28 @@ import com.capgemini.JobApplication.entity.enums.UserStatus;
 
 public class UserResponseDto {
 	private Long id;
-    private String firstName;
-    private String lastName;
+    private String first_name;
+    private String last_name;
     private String email;
     private String phone;
-    private UserRole userRole;
-    private UserStatus userStatus;
-    private LocalDate dateCreated;
+    private UserRole user_role;
+    private UserStatus user_status;
+    private LocalDate date_created;
 	public UserResponseDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public UserResponseDto(Long id, String firstName, String lastName, String email, String phone, UserRole userRole,
-			UserStatus userStatus, LocalDate dateCreated) {
+	public UserResponseDto(Long id, String first_name, String last_name, String email, String phone, UserRole user_role,
+			UserStatus user_status, LocalDate date_created) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.first_name = first_name;
+		this.last_name = last_name;
 		this.email = email;
 		this.phone = phone;
-		this.userRole = userRole;
-		this.userStatus = userStatus;
-		this.dateCreated = dateCreated;
+		this.user_role = user_role;
+		this.user_status = user_status;
+		this.date_created = date_created;
 	}
 	public Long getId() {
 		return id;
@@ -36,17 +36,17 @@ public class UserResponseDto {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFirst_name() {
+		return first_name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getLast_name() {
+		return last_name;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 	public String getEmail() {
 		return email;
@@ -60,24 +60,23 @@ public class UserResponseDto {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public UserRole getUserRole() {
-		return userRole;
+	public UserRole getUser_role() {
+		return user_role;
 	}
-	public void setUserRole(UserRole userRole) {
-		this.userRole = userRole;
+	public void setUser_role(UserRole user_role) {
+		this.user_role = user_role;
 	}
-	public UserStatus getUserStatus() {
-		return userStatus;
+	public UserStatus getUser_status() {
+		return user_status;
 	}
-	public void setUserStatus(UserStatus userStatus) {
-		this.userStatus = userStatus;
+	public void setUser_status(UserStatus user_status) {
+		this.user_status = user_status;
 	}
-	public LocalDate getDateCreated() {
-		return dateCreated;
+	public LocalDate getDate_created() {
+		return date_created;
 	}
-	public void setDateCreated(LocalDate dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDate_created(LocalDate date_created) {
+		this.date_created = date_created;
 	}
-    
-    
+	    
 }

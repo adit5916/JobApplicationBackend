@@ -8,41 +8,49 @@ import com.capgemini.JobApplication.entity.enums.JobType;
 
 public class JobCreateDto {
 	private String title;
+	private Long employerId;
     private String description;
     private String requirements;
-    private JobType jobType;
+    private JobType job_type;
     private String location;
-    private BigDecimal salaryMin;
-    private BigDecimal salaryMax;
+    private BigDecimal salary_min;
+    private BigDecimal salary_max;
     private List<String> skills;
-    private String experienceRequired;
-    private String educationRequired;
-    private LocalDate closingDate;
+    private String experience_required;
+    private String education_required;
+    private LocalDate closing_date;
 	public JobCreateDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public JobCreateDto(String title, String description, String requirements, JobType jobType, String location,
-			BigDecimal salaryMin, BigDecimal salaryMax, List<String> skills, String experienceRequired,
-			String educationRequired, LocalDate closingDate) {
+	public JobCreateDto(String title, Long employerId, String description, String requirements, JobType job_type,
+			String location, BigDecimal salary_min, BigDecimal salary_max, List<String> skills,
+			String experience_required, String education_required, LocalDate closing_date) {
 		super();
 		this.title = title;
+		this.employerId = employerId;
 		this.description = description;
 		this.requirements = requirements;
-		this.jobType = jobType;
+		this.job_type = job_type;
 		this.location = location;
-		this.salaryMin = salaryMin;
-		this.salaryMax = salaryMax;
+		this.salary_min = salary_min;
+		this.salary_max = salary_max;
 		this.skills = skills;
-		this.experienceRequired = experienceRequired;
-		this.educationRequired = educationRequired;
-		this.closingDate = closingDate;
+		this.experience_required = experience_required;
+		this.education_required = education_required;
+		this.closing_date = closing_date;
 	}
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public Long getEmployerId() {
+		return employerId;
+	}
+	public void setEmployerId(Long employerId) {
+		this.employerId = employerId;
 	}
 	public String getDescription() {
 		return description;
@@ -56,11 +64,11 @@ public class JobCreateDto {
 	public void setRequirements(String requirements) {
 		this.requirements = requirements;
 	}
-	public JobType getJobType() {
-		return jobType;
+	public JobType getJob_type() {
+		return job_type;
 	}
-	public void setJobType(JobType jobType) {
-		this.jobType = jobType;
+	public void setJob_type(JobType job_type) {
+		this.job_type = job_type;
 	}
 	public String getLocation() {
 		return location;
@@ -68,17 +76,17 @@ public class JobCreateDto {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public BigDecimal getSalaryMin() {
-		return salaryMin;
+	public BigDecimal getSalary_min() {
+		return salary_min;
 	}
-	public void setSalaryMin(BigDecimal salaryMin) {
-		this.salaryMin = salaryMin;
+	public void setSalary_min(BigDecimal salary_min) {
+		this.salary_min = salary_min;
 	}
-	public BigDecimal getSalaryMax() {
-		return salaryMax;
+	public BigDecimal getSalary_max() {
+		return salary_max;
 	}
-	public void setSalaryMax(BigDecimal salaryMax) {
-		this.salaryMax = salaryMax;
+	public void setSalary_max(BigDecimal salary_max) {
+		this.salary_max = salary_max;
 	}
 	public List<String> getSkills() {
 		return skills;
@@ -86,25 +94,23 @@ public class JobCreateDto {
 	public void setSkills(List<String> skills) {
 		this.skills = skills;
 	}
-	public String getExperienceRequired() {
-		return experienceRequired;
+	public String getExperience_required() {
+		return experience_required;
 	}
-	public void setExperienceRequired(String experienceRequired) {
-		this.experienceRequired = experienceRequired;
+	public void setExperience_required(String experience_required) {
+		this.experience_required = experience_required;
 	}
-	public String getEducationRequired() {
-		return educationRequired;
+	public String getEducation_required() {
+		return education_required;
 	}
-	public void setEducationRequired(String educationRequired) {
-		this.educationRequired = educationRequired;
+	public void setEducation_required(String education_required) {
+		this.education_required = education_required;
 	}
-	public LocalDate getClosingDate() {
-		return closingDate;
+	public LocalDate getClosing_date() {
+		return closing_date;
 	}
-	public void setClosingDate(LocalDate closingDate) {
-		this.closingDate = closingDate;
+	public void setClosing_date(LocalDate closing_date) {
+		this.closing_date = closing_date;
 	}
-    
-    
-    
-}
+		
+	}
